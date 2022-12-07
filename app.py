@@ -1,14 +1,14 @@
 import json
 
-from difflib import get_close_matches
+from difflib import get_close_matches          
 
-from tkinter import Tk, Entry, Button, Text, Scrollbar
+from tkinter import Tk, Entry, Button, Text, Scrollbar           
 
 
 
 class Chatbot:
 
-    def __init__(self, window):
+    def __init__(self, window):   #designing a chatbot
 
         window.title('NLP Chatbot')
 
@@ -25,7 +25,7 @@ class Chatbot:
         self.message_session.config(
 
 
-            width=45, height=15, bg="orange", fg="black", state='disabled')
+            width=50, height=20, bg="skyblue", fg="black", state='disabled')
 
 
         self.overscroll = Scrollbar(window, command=self.message_session.yview)
@@ -97,19 +97,20 @@ class Chatbot:
 
         if close_match:
 
-            reply = 'Iris: ' + self.Brain[close_match[0]][0] + '\n'
+            reply = 'BOT: ' + self.Brain[close_match[0]][0] + '\n'  
 
         else:
 
-            
-            reply = 'Iris: ' + 'Cant it in my knowledge base\n'
+
+            reply = 'BOT: ' + 'Not in dataset\n'
 
         self.add_chat(message)
 
         self.add_chat(reply)
 
 
-root = Tk()
+BOT = Tk()
 
-Chatbot(root)
-root.mainloop()
+Chatbot(BOT)
+
+BOT.mainloop()
